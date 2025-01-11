@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #f0f8ff, #add8e6);
+}
+
+.counter {
+    font-size: 5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+}
+
+button {
+    background: linear-gradient(135deg, #ff7f50, #ff6347);
+    border: none;
+    border-radius: 10px;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    transform: scale(1.05);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+    </style>
+</head>
+<body>
+    <div class="counter" id="counter">0</div>
+    <div class="buttons">
+        <button id="increaseBtn">Increase</button>
+        <button id="resetBtn">Reset</button>
+        <button id="decreaseBtn">Decrease</button>
+    </div>
+    <script>
+        const decreaseBtn = document.getElementById("decreaseBtn");
+        const increaseBtn = document.getElementById("increaseBtn");
+        const resetBtn = document.getElementById("resetBtn");
+        const counter = document.getElementById("counter");
+        let count = 0;
+
+        increaseBtn.onclick = function () {
+            count++;
+            counter.textContent = count;
+        };
+
+        decreaseBtn.onclick = function () {
+            count--;
+            counter.textContent = count;
+        };
+
+        resetBtn.onclick = function () {
+            count = 0;
+            counter.textContent = count;
+        };
+    </script>
+</body>
+</html>
